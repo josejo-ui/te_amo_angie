@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Te amo Angie ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+    #mainMessage {
+      position: absolute;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: red;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 1s ease;
+      z-index: 10;
+    }
+    #surpriseButton {
+      padding: 15px 25px;
+      font-size: 1.2em;
+      background: #ff4d4d;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+      z-index: 10;
+    }
+    #surpriseButton:hover {
+      transform: scale(1.1);
+    }
+    .floating {
+      position: absolute;
+      opacity: 0.9;
+      animation: floatUp linear forwards;
+    }
+    .floating img {
+      max-width: 50px; /* Controla el tamaño máximo de las fotos */
+      max-height: 50px;
+      display: block;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <button id="surpriseButton">🎁 Sorpresa</button>
+  <div id="mainMessage">Te amo Angie, eres el amor de mi vida ❤️</div>
+
+  <script>
+    const button = document.getElementById('surpriseButton');
+    const message = document.getElementById('mainMessage');
+
+    const imageFiles = [
+      "IMG_20241215_123725.jpg",
+      "IMG_20241218_115034.jpg",
+      "IMG_20250427_231410.jpg",
+      "IMG_20250703_162521.jpg",
+      "IMG-20240923-WA0004.jpg",
+      "IMG-20241215-WA0015.jpg",
+      "IMG-20250224-WA0004(1).jpg",
+      "IMG-20250421-WA0010.jpg",
+      "IMG-20250421-WA0012.jpg",
+      "IMG-20250606-WA0004.jpg",
+      "IMG-20250611-WA0010.jpg",
+      "IMG-20250611-WA0011.jpg",
+      "IMG-20250718-WA0021.jpg",
+      "IMG-20250818-WA0018.jpg",
+      "IMG-20250818-WA0020.jpg",
+      "Secuencia 01.00_00_05_23.Imagen fija002.png",
+      "Secuencia 01.00_04_35_00.Imagen fija007.jpg",
+      "Secuencia 01.00_06_59_04.Imagen fija010.jpg",
+      "Secuencia 01.00_07_21_03.Imagen fija013.jpg"
+    ];
+
+    button.addEventListener('click', () => {
+      button.style.display = 'none';
+      message.style.opacity = 1;
+
+      setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * imageFiles.length);
+        createFloatingImage(imageFiles\[randomIndex]);
+      }, 500);
+    });
+
+    function createFloatingImage(imageSrc) {
+      const span = document.createElement('span');
+      span.classList.add('floating');
+      const img = document.createElement('img');
+      img.src = imageSrc;
+      span.appendChild(img);
+      span.style.left = Math.random() * 90 + "vw";
+      span.style.top = "100vh"; /* Asegura que empiece desde abajo */
+      span.style.animationDuration = (Math.random() * 6 + 6) + "s";
+      document.body.appendChild(span);
+
+      setTimeout(() => {
+        span.remove();
+      }, 12000);
+    }
+  </script>
+
+</body>
+</html>
