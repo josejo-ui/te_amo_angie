@@ -47,7 +47,7 @@
     }
     @keyframes floatUp {
       0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
-      100% { transform: translateY(-10vh) scale(1.2); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.2); opacity: 1; }
     }
     .photo {
       position: absolute;
@@ -56,7 +56,7 @@
       z-index: 99;
       border-radius: 10px;
       box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
-      width: 100px;
+      width: 200px; /* Tamaño duplicado */
     }
     /* Estilos para distribuir las 10 fotos */
     .photo:nth-child(3) { top: 10%; left: 10%; }
@@ -75,26 +75,16 @@
   <button id="surpriseButton">🎁 Sorpresa</button>
   <div id="mainMessage">Te amo Angie, eres el amor de mi vida ❤️</div>
   
-  <img src="
-IMG-20240923-WA0004.jpg" alt="Foto de Angie y yo 1" class="photo">
-  <img src="
-IMG-20241215-WA0015.jpg" alt="Foto de Angie y yo 2" class="photo">
-  <img src="
-IMG-20250224-WA0004(1).jpg" alt="Foto de Angie y yo 3" class="photo">
-  <img src="
-IMG-20250421-WA0010.jpg" alt="Foto de Angie y yo 4" class="photo">
-  <img src="
-IMG-20250421-WA0012.jpg" alt="Foto de Angie y yo 5" class="photo">
-  <img src="
-IMG-20250606-WA0004.jpg" alt="Foto de Angie y yo 6" class="photo">
-  <img src="
-IMG-20250611-WA0010.jpg" alt="Foto de Angie y yo 7" class="photo">
-  <img src="
-IMG-20250611-WA0011.jpg" alt="Foto de Angie y yo 8" class="photo">
-  <img src="
-IMG-20250718-WA0021.jpg" alt="Foto de Angie y yo 9" class="photo">
-  <img src="
-IMG-20250818-WA0018.jpg" alt="Foto de Angie y yo 10" class="photo">
+  <img src="IMG-20240923-WA0004.jpg" alt="Foto de Angie y yo 1" class="photo">
+  <img src="IMG-20241215-WA0015.jpg" alt="Foto de Angie y yo 2" class="photo">
+  <img src="IMG-20250224-WA0004(1).jpg" alt="Foto de Angie y yo 3" class="photo">
+  <img src="IMG-20250421-WA0010.jpg" alt="Foto de Angie y yo 4" class="photo">
+  <img src="IMG-20250421-WA0012.jpg" alt="Foto de Angie y yo 5" class="photo">
+  <img src="IMG-20250606-WA0004.jpg" alt="Foto de Angie y yo 6" class="photo">
+  <img src="IMG-20250611-WA0010.jpg" alt="Foto de Angie y yo 7" class="photo">
+  <img src="IMG-20250611-WA0011.jpg" alt="Foto de Angie y yo 8" class="photo">
+  <img src="IMG-20250718-WA0021.jpg" alt="Foto de Angie y yo 9" class="photo">
+  <img src="IMG-20250818-WA0018.jpg" alt="Foto de Angie y yo 10" class="photo">
   
   <script>
     const button = document.getElementById('surpriseButton');
