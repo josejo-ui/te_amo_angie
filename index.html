@@ -52,48 +52,75 @@
     .photo {
       position: absolute;
       opacity: 0;
-      transition: opacity 1s ease;
+      transition: opacity 1s ease 0.5s;
       z-index: 99;
       border-radius: 10px;
       box-shadow: 0px 4px 15px rgba(0,0,0,0.4);
+      width: 100px;
     }
+    /* Estilos para distribuir las 10 fotos */
+    .photo:nth-child(3) { top: 10%; left: 10%; }
+    .photo:nth-child(4) { top: 15%; right: 15%; }
+    .photo:nth-child(5) { top: 35%; left: 20%; }
+    .photo:nth-child(6) { top: 45%; right: 20%; }
+    .photo:nth-child(7) { bottom: 35%; left: 25%; }
+    .photo:nth-child(8) { bottom: 25%; right: 25%; }
+    .photo:nth-child(9) { top: 55%; left: 30%; }
+    .photo:nth-child(10) { bottom: 45%; right: 30%; }
+    .photo:nth-child(11) { top: 70%; left: 35%; }
+    .photo:nth-child(12) { bottom: 10%; right: 35%; }
   </style>
 </head>
 <body>
   <button id="surpriseButton">🎁 Sorpresa</button>
   <div id="mainMessage">Te amo Angie, eres el amor de mi vida ❤️</div>
   
-  <img src="IMG-20240923-WA0004.jpg" alt="Foto de Angie y yo 1" class="photo" style="top: 20%; left: 15%; width: 250px;">
   <img src="
-IMG-20241215-WA0015.jpg" alt="Foto de Angie y yo 2" class="photo" style="top: 40%; right: 10%; width: 280px;">
+IMG-20240923-WA0004.jpg" alt="Foto de Angie y yo 1" class="photo">
   <img src="
-IMG-20250224-WA0004(1).jpg" alt="Foto de Angie y yo 3" class="photo" style="bottom: 15%; left: 40%; width: 220px;">
+IMG-20241215-WA0015.jpg" alt="Foto de Angie y yo 2" class="photo">
+  <img src="
+IMG-20250224-WA0004(1).jpg" alt="Foto de Angie y yo 3" class="photo">
+  <img src="
+IMG-20250421-WA0010.jpg" alt="Foto de Angie y yo 4" class="photo">
+  <img src="
+IMG-20250421-WA0012.jpg" alt="Foto de Angie y yo 5" class="photo">
+  <img src="
+IMG-20250606-WA0004.jpg" alt="Foto de Angie y yo 6" class="photo">
+  <img src="
+IMG-20250611-WA0010.jpg" alt="Foto de Angie y yo 7" class="photo">
+  <img src="
+IMG-20250611-WA0011.jpg" alt="Foto de Angie y yo 8" class="photo">
+  <img src="
+IMG-20250718-WA0021.jpg" alt="Foto de Angie y yo 9" class="photo">
+  <img src="
+IMG-20250818-WA0018.jpg" alt="Foto de Angie y yo 10" class="photo">
   
   <script>
     const button = document.getElementById('surpriseButton');
     const message = document.getElementById('mainMessage');
     const photos = document.querySelectorAll('.photo');
-
+    
     const frases = [
       "Te amo chiquilla 💕","Te amo ❤️","Amorcito 😘",
       "Chiquilla de mi corazón 🌹","Eres mi vida 💖",
       "Siempre juntos 💞","Mi amor eterno 💓"
     ];
     const emojis = ["❤️","💋","🌸","🌹","💖","💞","😍","😘","🥰"];
-
+    
     button.addEventListener('click', () => {
       button.style.display = 'none';
       message.style.opacity = 1;
       photos.forEach(photo => {
         photo.style.opacity = 1;
       });
-
+      
       setInterval(() => {
         createFloating(frases[Math.floor(Math.random() * frases.length)]);
         createFloating(emojis[Math.floor(Math.random() * emojis.length)]);
       }, 500);
     });
-
+    
     function createFloating(text) {
       const span = document.createElement('span');
       span.classList.add('floating');
@@ -103,17 +130,17 @@ IMG-20250224-WA0004(1).jpg" alt="Foto de Angie y yo 3" class="photo" style="bott
       span.style.animationDuration = (Math.random() * 6 + 6) + "s";
       span.style.color = getRandomColor();
       document.body.appendChild(span);
-
+      
       setTimeout(() => {
         span.remove();
       }, 12000);
     }
-
+    
     function getRandomColor() {
       const colors = ["#e60000","#ff3399","#ff6600","#cc0099","#ff0000"];
       return colors[Math.floor(Math.random() * colors.length)];
     }
   </script>
-
 </body>
 </html>
+
