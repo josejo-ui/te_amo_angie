@@ -45,7 +45,7 @@
       animation: floatUp linear forwards;
     }
     .floating img {
-      max-width: 50px; /* Controla el tamaño máximo de las fotos */
+      max-width: 50px;
       max-height: 50px;
       display: block;
     }
@@ -76,9 +76,9 @@
       "IMG-20250606-WA0004.jpg",
       "IMG-20250611-WA0010.jpg",
       "IMG-20250611-WA0011.jpg",
-      "IMG-20250718-WA0021.jpg",
-      "IMG-20250818-WA0018.jpg",
-      "IMG-20250818-WA0020.jpg",
+      "IMG_20250718-WA0021.jpg",
+      "IMG_20250818-WA0018.jpg",
+      "IMG_20250818-WA0020.jpg",
       "Secuencia 01.00_00_05_23.Imagen fija002.png",
       "Secuencia 01.00_04_35_00.Imagen fija007.jpg",
       "Secuencia 01.00_06_59_04.Imagen fija010.jpg",
@@ -86,12 +86,17 @@
     ];
 
     button.addEventListener('click', () => {
+      // Oculta el botón
       button.style.display = 'none';
+      // Muestra el mensaje principal
       message.style.opacity = 1;
 
+      // Inicia el proceso de creación de imágenes flotantes
       setInterval(() => {
+        // Elige un índice aleatorio del array de imágenes
         const randomIndex = Math.floor(Math.random() * imageFiles.length);
-        createFloatingImage(imageFiles\[randomIndex]);
+        // Llama a la función para crear la imagen flotante con el nombre del archivo
+        createFloatingImage(imageFiles[randomIndex]);
       }, 500);
     });
 
@@ -102,7 +107,7 @@
       img.src = imageSrc;
       span.appendChild(img);
       span.style.left = Math.random() * 90 + "vw";
-      span.style.top = "100vh"; /* Asegura que empiece desde abajo */
+      span.style.top = "100vh";
       span.style.animationDuration = (Math.random() * 6 + 6) + "s";
       document.body.appendChild(span);
 
